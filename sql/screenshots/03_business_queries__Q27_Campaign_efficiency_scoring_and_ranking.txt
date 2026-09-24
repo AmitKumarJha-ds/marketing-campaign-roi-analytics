@@ -1,0 +1,41 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- WITH scored AS (
+--     SELECT
+--         campaign_id,
+--         campaign_name,
+--         channel,
+--         campaign_type,
+--         roi_percentage,
+--         conversion_rate,
+--         ctr,
+--         performance_score,
+--         profit,
+--         PERCENT_RANK() OVER (ORDER BY performance_score) AS percentile_rank
+--     FROM marketing_campaigns
+-- )
+
+-- Result: 20 row(s)
+
+campaign_id                                   campaign_name           channel   campaign_type  roi_pct  conversion_rate     ctr  performance_score  percentile    profit
+  CAMP_2843   Newsletter Retention - Content Marketing 2024 Content Marketing       Retention 10365.48           1.9809  1.8279              45.38      100.00 193993.10
+  CAMP_3651             Black Friday Retention - Email 2024             Email       Retention   224.14          17.8711  0.3950              36.53       99.99 159130.84
+  CAMP_4177        Winter Lead Gen - Content Marketing 2023             Email Lead Generation   206.96          17.8711  0.2313              36.33       99.98 255118.92
+  CAMP_8121 Back to School Conversion Push - Affiliate 2022         Affiliate      Conversion   274.17          17.1294  0.3257              35.21       99.97 152015.74
+  CAMP_5068                Winter Lead Gen - Affiliate 2023         Affiliate Lead Generation   604.31          14.1626  0.3411              30.67       99.96 283892.02
+  CAMP_8280           Black Friday Retention - YouTube 2023           YouTube       Retention  7469.51           0.6531  0.4692              30.53       99.95 462550.74
+  CAMP_1437       Holiday Conversion Push - Influencer 2024        Influencer      Conversion  6868.97           1.3859  0.9533              30.09       99.94 462017.11
+  CAMP_2560        Flash Sale Win-back - Instagram Ads 2022     Instagram Ads   Re-engagement  7004.03           0.6262  0.7172              28.91       99.93 462144.99
+  CAMP_4758            Winter Win-back - Instagram Ads 2024     Instagram Ads   Re-engagement  6285.76           0.7309  0.7095              26.37       99.92 285598.95
+  CAMP_6499        Spring Brand Awareness - Google Ads 2022        Google Ads Brand Awareness   -46.92           0.1103 28.8136              25.19       99.91  -2101.49
+  CAMP_7712    Premium Brand Awareness - Instagram Ads 2023     Instagram Ads Brand Awareness   -84.47           0.0200 29.0358              25.06       99.90   -609.38
+  CAMP_5140              Upsell Retention - Google Ads 2023        Google Ads       Retention  3822.11           2.4372  5.4996              24.43       99.89 307474.63
+  CAMP_3906        Winter Conversion Push - Google Ads 2024        Google Ads      Conversion     6.86           0.3608 26.8820              24.22       99.88    811.34
+  CAMP_1921             New Year Conversion Push - SEO 2022               SEO      Conversion   185.20           0.2706 26.0476              24.00       99.87   2898.71
+  CAMP_9029                   Winter Retention - Email 2023             Email       Retention  2323.71           3.9654  7.1255              23.10       99.86 358669.13
+  CAMP_5668          Product Launch Lead Gen - YouTube 2023           YouTube Lead Generation    82.80           1.2484 23.2168              23.09       99.85 103841.64
+  CAMP_3673       Back to School Retention - Affiliate 2023         Affiliate       Retention   208.10          11.0053  0.4062              23.02       99.84  96228.75
+  CAMP_3835                  Loyalty Retention - Email 2023             Email       Retention  3350.30           3.2768  4.0002              22.98       99.83 107240.13
+  CAMP_2702               Spring Conversion Push - SEO 2023               SEO      Conversion   -30.88           0.2606 25.7464              22.90       99.82   -550.90
+  CAMP_8555       Holiday Win-back - Content Marketing 2023 Content Marketing   Re-engagement    10.02          11.2258  0.1402              22.46       99.81  13866.50

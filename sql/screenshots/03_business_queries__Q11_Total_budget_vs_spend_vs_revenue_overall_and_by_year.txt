@@ -1,0 +1,25 @@
+-- 03_business_queries.sql
+-- CATEGORY 3 : BUDGET & FINANCIAL ANALYSIS
+-- MySQL source:
+-- SELECT 'ALL YEARS'                                          AS period,
+--        COUNT(*)                                             AS campaigns,
+--        ROUND(SUM(budget_allocated), 2)                      AS total_budget,
+--        ROUND(SUM(amount_spent), 2)                          AS total_spend,
+--        ROUND(SUM(revenue_generated), 2)                     AS total_revenue,
+--        ROUND(SUM(profit), 2)                                AS total_profit,
+--        ROUND(SUM(amount_spent) / NULLIF(SUM(budget_allocated), 0) * 100, 2) AS budget_utilization_pct,
+--        ROUND((SUM(revenue_generated) / NULLIF(SUM(amount_spent), 0) - 1) * 100, 2) AS blended_roi
+-- FROM marketing_campaigns
+-- UNION ALL
+-- SELECT CAST(year AS CHAR),
+--        COUNT(*),
+--        ROUND(SUM(budget_allocated), 2),
+--        ROUND(SUM(amount_spent), 2),
+
+-- Result: 4 row(s)
+
+   period  campaigns  total_budget  total_spend  total_revenue  total_profit  budget_utilization_pct  blended_roi
+     2022       3517   84671339.29  68519117.63   136233052.28   67713934.75                   80.92        98.82
+     2023       3397   82271634.50  66286902.89   127347858.09   61060955.37                   80.57        92.12
+     2024       3081   77000662.76  63563321.53   125282026.47   61718705.05                   82.55        97.10
+ALL YEARS       9995  243943636.55 198369342.04   388862936.84  190493595.17                   81.32        96.03

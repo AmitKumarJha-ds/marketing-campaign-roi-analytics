@@ -1,0 +1,20 @@
+-- 02_data_cleaning.sql
+-- FIX 6 : recompute ROI everywhere from the base metrics
+-- MySQL source:
+-- SELECT campaign_status,
+--        COUNT(*)                                            AS campaigns,
+--        ROUND(COUNT(*) / (SELECT COUNT(*) FROM marketing_campaigns) * 100, 2) AS pct_of_total,
+--        ROUND(AVG(roi_percentage), 2)                       AS avg_roi,
+--        ROUND(AVG(budget_utilization), 2)                   AS avg_budget_utilization,
+--        ROUND(AVG(CASE WHEN is_profitable THEN 1 ELSE 0 END) * 100, 2) AS pct_profitable
+-- FROM marketing_campaigns
+-- GROUP BY campaign_status
+-- ORDER BY campaigns DESC;
+
+-- Result: 4 row(s)
+
+campaign_status  campaigns  pct_of_total  avg_roi  avg_budget_utilization  pct_profitable
+      Completed       7045         70.49   113.87                   89.57           57.84
+         Active       1669         16.70   132.30                   80.61           57.94
+      Cancelled        699          6.99   -48.08                   23.04           12.59
+         Paused        582          5.82    24.08                   57.72           35.22

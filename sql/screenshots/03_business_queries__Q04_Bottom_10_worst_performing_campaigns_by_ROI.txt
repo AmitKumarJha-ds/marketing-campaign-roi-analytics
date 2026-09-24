@@ -1,0 +1,31 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- SELECT
+--     campaign_id,
+--     campaign_name,
+--     campaign_type,
+--     channel,
+--     ROUND(budget_allocated, 2)  AS budget_allocated,
+--     ROUND(amount_spent, 2)      AS amount_spent,
+--     ROUND(revenue_generated, 2) AS revenue_generated,
+--     ROUND(profit, 2)            AS profit,
+--     ROUND(roi_percentage, 2)    AS roi_percentage,
+--     ROUND(customer_acquisition_cost, 2) AS cac
+-- FROM marketing_campaigns
+-- ORDER BY roi_percentage ASC
+-- LIMIT 10;
+
+-- Result: 10 row(s)
+
+campaign_id                                    campaign_name   campaign_type       channel  budget_allocated  amount_spent  revenue_generated    profit  roi_percentage     cac
+  CAMP_0103  Flash Sale Brand Awareness - Instagram Ads 2022 Brand Awareness Instagram Ads          15344.56      16111.79             121.42 -15990.37          -99.25 2517.46
+  CAMP_0521                  Webinar Win-back - YouTube 2022   Re-engagement       YouTube          51764.14      14963.44             112.04 -14851.40          -99.25  519.56
+  CAMP_7063      Webinar Brand Awareness - Social Media 2023 Brand Awareness  Social Media          15826.84      12545.58             122.78 -12422.80          -99.02 1960.25
+  CAMP_6507 Black Friday Brand Awareness - Facebook Ads 2022 Brand Awareness  Facebook Ads         163137.25      47887.81             544.12 -47343.69          -98.86 1360.45
+  CAMP_8662     New Year Brand Awareness - Facebook Ads 2023 Brand Awareness  Facebook Ads          27466.92       9493.21             112.04  -9381.17          -98.82 1186.65
+  CAMP_2477   Evergreen Brand Awareness - Instagram Ads 2022 Brand Awareness Instagram Ads          27257.81       9383.27             112.04  -9271.23          -98.81 2932.28
+  CAMP_3986              Spring Brand Awareness - Email 2022 Brand Awareness         Email          62735.07       8978.23             112.04  -8866.19          -98.75  431.65
+  CAMP_2730        Newsletter Brand Awareness - YouTube 2024 Brand Awareness         Email          28245.60       8820.61             112.04  -8708.57          -98.73 1002.34
+  CAMP_4395      Winter Brand Awareness - Instagram Ads 2022 Brand Awareness Instagram Ads          88875.83      52387.28             705.97 -51681.31          -98.65 2425.34
+  CAMP_9399    Evergreen Brand Awareness - Social Media 2023 Brand Awareness  Social Media          17831.50      17901.62             256.22 -17645.40          -98.57 1398.56

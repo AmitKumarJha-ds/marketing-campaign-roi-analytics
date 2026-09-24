@@ -1,0 +1,21 @@
+-- 02_data_cleaning.sql
+-- FIX 7 : standardise status labels
+-- MySQL source:
+-- SELECT 'campaign_type'  AS dimension, COUNT(DISTINCT campaign_type)  AS distinct_values FROM marketing_campaigns
+-- UNION ALL SELECT 'channel',         COUNT(DISTINCT channel)                FROM marketing_campaigns
+-- UNION ALL SELECT 'geography',       COUNT(DISTINCT geography)              FROM marketing_campaigns
+-- UNION ALL SELECT 'target_audience', COUNT(DISTINCT target_audience)       FROM marketing_campaigns
+-- UNION ALL SELECT 'campaign_status', COUNT(DISTINCT campaign_status)       FROM marketing_campaigns
+-- UNION ALL SELECT 'roi_category',    COUNT(DISTINCT roi_category)          FROM marketing_campaigns
+-- UNION ALL SELECT 'budget_tier',     COUNT(DISTINCT budget_tier)           FROM marketing_campaigns;
+
+-- Result: 7 row(s)
+
+      dimension  distinct_values
+  campaign_type                5
+        channel               10
+      geography                6
+target_audience                6
+campaign_status                4
+   roi_category                5
+    budget_tier                4

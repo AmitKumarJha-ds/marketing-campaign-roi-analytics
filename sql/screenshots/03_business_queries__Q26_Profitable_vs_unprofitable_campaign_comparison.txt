@@ -1,0 +1,23 @@
+-- 03_business_queries.sql
+-- BONUS QUERIES : ADVANCED ANALYTICS (Q26-Q30)
+-- MySQL source:
+-- SELECT
+--     CASE WHEN is_profitable THEN 'Profitable' ELSE 'Unprofitable' END AS profitability_group,
+--     COUNT(*)                                                       AS campaigns,
+--     ROUND(COUNT(*) / (SELECT COUNT(*) FROM marketing_campaigns) * 100, 2) AS pct_of_campaigns,
+--     ROUND(SUM(amount_spent), 2)                                    AS total_spend,
+--     ROUND(SUM(revenue_generated), 2)                               AS total_revenue,
+--     ROUND(SUM(profit), 2)                                          AS total_profit,
+--     ROUND(AVG(roi_percentage), 2)                                  AS avg_roi,
+--     ROUND(AVG(customer_acquisition_cost), 2)                       AS avg_cac,
+--     ROUND(AVG(conversion_rate), 4)                                 AS avg_conversion_rate,
+--     ROUND(AVG(performance_score), 2)                               AS avg_performance_score
+-- FROM marketing_campaigns
+-- GROUP BY CASE WHEN is_profitable THEN 'Profitable' ELSE 'Unprofitable' END
+-- ORDER BY total_profit DESC;
+
+-- Result: 2 row(s)
+
+profitability_group  campaigns  pct_of_campaigns  total_spend  total_revenue  total_profit  avg_roi  avg_cac  avg_conversion_rate  avg_performance_score
+         Profitable       5335             53.38 112206209.82   347416294.44  235210084.87   235.35   133.95               1.5270                   6.10
+       Unprofitable       4660             46.62  86163132.22    41446642.40  -44716489.70   -54.10   416.24               0.6437                   2.96

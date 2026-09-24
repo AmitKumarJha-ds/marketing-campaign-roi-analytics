@@ -1,0 +1,28 @@
+-- 03_business_queries.sql
+-- CATEGORY 2 : CHANNEL ANALYSIS
+-- MySQL source:
+-- SELECT
+--     channel,
+--     COUNT(*)                                              AS campaigns,
+--     ROUND(AVG(roi_percentage), 2)                         AS avg_roi,
+--     ROUND(SUM(revenue_generated), 2)                      AS total_revenue,
+--     ROUND(SUM(profit), 2)                                 AS total_profit,
+--     ROUND(AVG(CASE WHEN is_profitable THEN 1 ELSE 0 END) * 100, 2) AS pct_profitable,
+--     RANK() OVER (ORDER BY AVG(roi_percentage) DESC)       AS roi_rank
+-- FROM marketing_campaigns
+-- GROUP BY channel
+-- ORDER BY avg_roi DESC;
+
+-- Result: 10 row(s)
+
+          channel  campaigns  avg_roi  total_revenue  total_profit  pct_profitable  roi_rank
+              SEO       1023   191.68    55685692.74   35762765.45           66.96         1
+            Email       1155   185.79    65981303.74   41338961.27           66.58         2
+        Affiliate       1013   185.43    53213073.31   32818911.83           67.32         3
+Content Marketing        900   116.61    33855780.56   16798768.57           56.56         4
+       Google Ads       1008    95.85    41782537.17   21020508.67           57.84         5
+     Facebook Ads       1010    64.32    34432080.49   14674906.53           50.69         6
+       Influencer        955    62.47    28162741.61   10362036.72           47.96         7
+          YouTube        971    33.56    26248551.25    6926195.70           39.65         8
+     Social Media        938    24.06    24808233.66    6187896.25           40.30         9
+    Instagram Ads       1022    23.09    24692942.31    4602644.18           36.59        10

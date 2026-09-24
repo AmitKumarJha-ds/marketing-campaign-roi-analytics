@@ -1,0 +1,22 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- WITH type_month AS (
+--     SELECT
+--         campaign_type,
+--         DATE_FORMAT(start_date, '%Y-%m-01') AS month,
+--         SUM(revenue_generated)              AS revenue,
+--         SUM(profit)                         AS profit
+--     FROM marketing_campaigns
+--     GROUP BY campaign_type, DATE_FORMAT(start_date, '%Y-%m-01')
+-- )
+-- SELECT
+--     campaign_type,
+--     month,
+--     ROUND(revenue, 2)                                              AS monthly_revenue,
+--     ROUND(SUM(revenue) OVER (PARTITION BY campaign_type ORDER BY month), 2) AS cumulative_revenue,
+
+-- Result: 1 row(s)
+
+  campaign_type      month  monthly_revenue  cumulative_revenue  cumulative_profit  pct_of_type_total
+Brand Awareness 2022-01-01        590734.94           590734.94         -872562.58               0.15

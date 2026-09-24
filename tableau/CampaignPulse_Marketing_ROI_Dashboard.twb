@@ -1,0 +1,372 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- CampaignPulse - Marketing Campaign ROI Analytics
+     Tableau workbook (data source layer).
+     Assemble the four dashboards with
+     TABLEAU_DASHBOARD_BUILD_GUIDE.md -->
+<workbook source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user' xmlns:dt='http://www.tableausoftware.com/xml/datasource'>
+  <preferences>
+    <preference name='ui.placement.suite.appearance' value='compact' />
+    <preference name='ui.syntax.enabled' value='true' />
+  </preferences>
+  <datasources>
+    <datasource caption='marketing_campaign_cleaned' inline='true' name='marketing_campaign_cleaned' version='18.1'>
+      <connection class='textscan' directory='Data' filename='marketing_campaign_cleaned.csv' password='' server='' service='' tenant='' warehouse=''>
+        <relation name='marketing_campaign_cleaned' table='[marketing_campaign_cleaned#csv]' type='table' />
+      </connection>
+      <aliases enabled='yes' />
+      <metadata-record class='column'>
+        <remote-name>campaign_id</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[campaign_id]</local-name>
+        <parent-name>[campaign_id]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>campaign_name</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[campaign_name]</local-name>
+        <parent-name>[campaign_name]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>campaign_type</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[campaign_type]</local-name>
+        <parent-name>[campaign_type]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>channel</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[channel]</local-name>
+        <parent-name>[channel]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>target_audience</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[target_audience]</local-name>
+        <parent-name>[target_audience]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>geography</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[geography]</local-name>
+        <parent-name>[geography]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>start_date</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[start_date]</local-name>
+        <parent-name>[start_date]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>end_date</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[end_date]</local-name>
+        <parent-name>[end_date]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>budget_allocated</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[budget_allocated]</local-name>
+        <parent-name>[budget_allocated]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>amount_spent</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[amount_spent]</local-name>
+        <parent-name>[amount_spent]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>impressions</remote-name>
+        <remote-type>integer</remote-type>
+        <local-name>[impressions]</local-name>
+        <parent-name>[impressions]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>clicks</remote-name>
+        <remote-type>integer</remote-type>
+        <local-name>[clicks]</local-name>
+        <parent-name>[clicks]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>leads_generated</remote-name>
+        <remote-type>integer</remote-type>
+        <local-name>[leads_generated]</local-name>
+        <parent-name>[leads_generated]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>conversions</remote-name>
+        <remote-type>integer</remote-type>
+        <local-name>[conversions]</local-name>
+        <parent-name>[conversions]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>revenue_generated</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[revenue_generated]</local-name>
+        <parent-name>[revenue_generated]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>ctr</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[ctr]</local-name>
+        <parent-name>[ctr]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>conversion_rate</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[conversion_rate]</local-name>
+        <parent-name>[conversion_rate]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>cpc</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[cpc]</local-name>
+        <parent-name>[cpc]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>cpa</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[cpa]</local-name>
+        <parent-name>[cpa]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>customer_acquisition_cost</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[customer_acquisition_cost]</local-name>
+        <parent-name>[customer_acquisition_cost]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>campaign_status</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[campaign_status]</local-name>
+        <parent-name>[campaign_status]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>quarter</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[quarter]</local-name>
+        <parent-name>[quarter]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>year</remote-name>
+        <remote-type>integer</remote-type>
+        <local-name>[year]</local-name>
+        <parent-name>[year]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>satisfaction_score</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[satisfaction_score]</local-name>
+        <parent-name>[satisfaction_score]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>bounce_rate</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[bounce_rate]</local-name>
+        <parent-name>[bounce_rate]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>engagement_rate</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[engagement_rate]</local-name>
+        <parent-name>[engagement_rate]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>roi_percentage</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[roi_percentage]</local-name>
+        <parent-name>[roi_percentage]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>campaign_duration_days</remote-name>
+        <remote-type>integer</remote-type>
+        <local-name>[campaign_duration_days]</local-name>
+        <parent-name>[campaign_duration_days]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>budget_utilization</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[budget_utilization]</local-name>
+        <parent-name>[budget_utilization]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>revenue_per_impression</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[revenue_per_impression]</local-name>
+        <parent-name>[revenue_per_impression]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>revenue_per_click</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[revenue_per_click]</local-name>
+        <parent-name>[revenue_per_click]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>cost_efficiency_ratio</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[cost_efficiency_ratio]</local-name>
+        <parent-name>[cost_efficiency_ratio]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>lead_to_conversion_rate</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[lead_to_conversion_rate]</local-name>
+        <parent-name>[lead_to_conversion_rate]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>profit</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[profit]</local-name>
+        <parent-name>[profit]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>profit_margin</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[profit_margin]</local-name>
+        <parent-name>[profit_margin]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>is_profitable</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[is_profitable]</local-name>
+        <parent-name>[is_profitable]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>campaign_month</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[campaign_month]</local-name>
+        <parent-name>[campaign_month]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>campaign_quarter</remote-name>
+        <remote-type>integer</remote-type>
+        <local-name>[campaign_quarter]</local-name>
+        <parent-name>[campaign_quarter]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>roi_category</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[roi_category]</local-name>
+        <parent-name>[roi_category]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>budget_tier</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[budget_tier]</local-name>
+        <parent-name>[budget_tier]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>performance_score</remote-name>
+        <remote-type>real</remote-type>
+        <local-name>[performance_score]</local-name>
+        <parent-name>[performance_score]</parent-name>
+        <ordinal>-1</ordinal>
+      </metadata-record>
+      <column caption='campaign_id' datatype='string' name='[campaign_id]' role='dimension' type='nominal' />
+      <column caption='campaign_name' datatype='string' name='[campaign_name]' role='dimension' type='nominal' />
+      <column caption='campaign_type' datatype='string' name='[campaign_type]' role='dimension' type='nominal' />
+      <column caption='channel' datatype='string' name='[channel]' role='dimension' type='nominal' />
+      <column caption='target_audience' datatype='string' name='[target_audience]' role='dimension' type='nominal' />
+      <column caption='geography' datatype='string' name='[geography]' role='dimension' type='nominal' />
+      <column caption='campaign_status' datatype='string' name='[campaign_status]' role='dimension' type='nominal' />
+      <column caption='quarter' datatype='string' name='[quarter]' role='dimension' type='nominal' />
+      <column caption='campaign_month' datatype='string' name='[campaign_month]' role='dimension' type='nominal' />
+      <column caption='roi_category' datatype='string' name='[roi_category]' role='dimension' type='ordinal' />
+      <column caption='budget_tier' datatype='string' name='[budget_tier]' role='dimension' type='ordinal' />
+      <column caption='start_date' datatype='date' name='[start_date]' role='measure' type='quantitative' />
+      <column caption='end_date' datatype='date' name='[end_date]' role='measure' type='quantitative' />
+      <column caption='budget_allocated' datatype='real' name='[budget_allocated]' role='measure' type='quantitative' />
+      <column caption='amount_spent' datatype='real' name='[amount_spent]' role='measure' type='quantitative' />
+      <column caption='revenue_generated' datatype='real' name='[revenue_generated]' role='measure' type='quantitative' />
+      <column caption='impressions' datatype='integer' name='[impressions]' role='measure' type='quantitative' />
+      <column caption='clicks' datatype='integer' name='[clicks]' role='measure' type='quantitative' />
+      <column caption='leads_generated' datatype='integer' name='[leads_generated]' role='measure' type='quantitative' />
+      <column caption='conversions' datatype='integer' name='[conversions]' role='measure' type='quantitative' />
+      <column caption='roi_percentage' datatype='real' name='[roi_percentage]' role='measure' type='quantitative' />
+      <column caption='ctr' datatype='real' name='[ctr]' role='measure' type='quantitative' />
+      <column caption='conversion_rate' datatype='real' name='[conversion_rate]' role='measure' type='quantitative' />
+      <column caption='cpc' datatype='real' name='[cpc]' role='measure' type='quantitative' />
+      <column caption='cpa' datatype='real' name='[cpa]' role='measure' type='quantitative' />
+      <column caption='customer_acquisition_cost' datatype='real' name='[customer_acquisition_cost]' role='measure' type='quantitative' />
+      <column caption='year' datatype='integer' name='[year]' role='measure' type='quantitative' />
+      <column caption='satisfaction_score' datatype='real' name='[satisfaction_score]' role='measure' type='quantitative' />
+      <column caption='bounce_rate' datatype='real' name='[bounce_rate]' role='measure' type='quantitative' />
+      <column caption='engagement_rate' datatype='real' name='[engagement_rate]' role='measure' type='quantitative' />
+      <column caption='campaign_duration_days' datatype='integer' name='[campaign_duration_days]' role='measure' type='quantitative' />
+      <column caption='budget_utilization' datatype='real' name='[budget_utilization]' role='measure' type='quantitative' />
+      <column caption='revenue_per_impression' datatype='real' name='[revenue_per_impression]' role='measure' type='quantitative' />
+      <column caption='revenue_per_click' datatype='real' name='[revenue_per_click]' role='measure' type='quantitative' />
+      <column caption='cost_efficiency_ratio' datatype='real' name='[cost_efficiency_ratio]' role='measure' type='quantitative' />
+      <column caption='lead_to_conversion_rate' datatype='real' name='[lead_to_conversion_rate]' role='measure' type='quantitative' />
+      <column caption='profit' datatype='real' name='[profit]' role='measure' type='quantitative' />
+      <column caption='profit_margin' datatype='real' name='[profit_margin]' role='measure' type='quantitative' />
+      <column caption='campaign_quarter' datatype='integer' name='[campaign_quarter]' role='measure' type='quantitative' />
+      <column caption='performance_score' datatype='real' name='[performance_score]' role='measure' type='quantitative' />
+      <column caption='Is Profitable' datatype='boolean' name='[Calculation_0001]' role='dimension' type='nominal'>
+        <calculation class="tableau" formula="IF [profit] &gt; 0 THEN 'Profitable' ELSE 'Loss-making' END" />
+      </column>
+      <column caption='ROI Band' datatype='string' name='[Calculation_0002]' role='dimension' type='nominal'>
+        <calculation class="tableau" formula="IF [roi_percentage] &lt; 0 THEN '1. Negative ROI'
+ELSEIF [roi_percentage] &lt; 50 THEN '2. Low (0-50%)'
+ELSEIF [roi_percentage] &lt; 150 THEN '3. Medium (50-150%)'
+ELSEIF [roi_percentage] &lt; 300 THEN '4. High (150-300%)'
+ELSE '5. Exceptional (300%+)' END" />
+      </column>
+      <column caption='Revenue per Dollar' datatype='real' name='[Calculation_0003]' role='dimension' type='nominal'>
+        <calculation class="tableau" formula="[revenue_generated] / [amount_spent]" />
+      </column>
+      <column caption='Campaign Month (start)' datatype='date' name='[Calculation_0004]' role='dimension' type='nominal'>
+        <calculation class="tableau" formula="DATETRUNC('month', [start_date])" />
+      </column>
+      <column caption='Profitability Flag' datatype='integer' name='[Calculation_0005]' role='dimension' type='nominal'>
+        <calculation class="tableau" formula="IF [profit] &gt; 0 THEN 1 ELSE 0 END" />
+      </column>
+      <layout dim-ordering='alphabetic' dim-position='last' measure-ordering='alphabetic' measure-position='last' show-structure='true' />
+    </datasource>
+  </datasources>
+  <worksheets>
+  </worksheets>
+  <dashboards>
+  </dashboards>
+  <windows source-height='30' source-width='180'>
+  </windows>
+</workbook>

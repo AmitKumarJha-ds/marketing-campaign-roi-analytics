@@ -1,0 +1,22 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- SELECT
+--     COUNT(*)                                                        AS total_campaigns,
+--     ROUND(SUM(budget_allocated), 2)                                 AS total_budget,
+--     ROUND(SUM(amount_spent), 2)                                     AS total_spend,
+--     ROUND(SUM(revenue_generated), 2)                                AS total_revenue,
+--     ROUND(SUM(profit), 2)                                           AS total_profit,
+--     ROUND((SUM(revenue_generated) / NULLIF(SUM(amount_spent), 0) - 1) * 100, 2) AS blended_roi_pct,
+--     ROUND(AVG(roi_percentage), 2)                                   AS avg_campaign_roi_pct,
+--     ROUND(AVG(customer_acquisition_cost), 2)                        AS avg_cac,
+--     ROUND(AVG(cpc), 2)                                              AS avg_cpc,
+--     ROUND(AVG(ctr), 3)                                              AS avg_ctr_pct,
+--     ROUND(AVG(conversion_rate), 3)                                  AS avg_conversion_rate_pct,
+--     ROUND(AVG(CASE WHEN is_profitable THEN 1 ELSE 0 END) * 100, 2)  AS pct_profitable,
+--     SUM(CASE WHEN NOT is_profitable THEN 1 ELSE 0 END)              AS loss_making_campaigns,
+
+-- Result: 1 row(s)
+
+ total_campaigns  total_budget  total_spend  total_revenue  total_profit  blended_roi_pct  avg_campaign_roi_pct  avg_cac  avg_cpc  avg_ctr_pct  avg_conversion_rate_pct  pct_profitable  loss_making_campaigns  spend_on_loss_makers best_channel_by_roi best_type_by_roi best_geography_by_roi
+            9995  243943636.55 198369342.04   388862936.84  190493595.17            96.03                 100.4   265.57     1.27         2.05                    1.115           53.38                   4660           86163132.22                 SEO        Retention         North America

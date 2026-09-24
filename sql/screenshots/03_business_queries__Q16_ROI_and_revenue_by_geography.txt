@@ -1,0 +1,25 @@
+-- 03_business_queries.sql
+-- CATEGORY 4 : GEOGRAPHIC ANALYSIS
+-- MySQL source:
+-- SELECT
+--     geography,
+--     COUNT(*)                                                       AS campaigns,
+--     ROUND(AVG(roi_percentage), 2)                                  AS avg_roi,
+--     ROUND(SUM(revenue_generated), 2)                               AS total_revenue,
+--     ROUND(SUM(revenue_generated) / (SELECT SUM(revenue_generated)
+--          FROM marketing_campaigns) * 100, 2)                       AS pct_of_total_revenue,
+--     ROUND(AVG(customer_acquisition_cost), 2)                       AS avg_cac,
+--     ROUND(AVG(CASE WHEN is_profitable THEN 1 ELSE 0 END) * 100, 2) AS pct_profitable
+-- FROM marketing_campaigns
+-- GROUP BY geography
+-- ORDER BY total_revenue DESC;
+
+-- Result: 6 row(s)
+
+    geography  campaigns  avg_roi  total_revenue  pct_of_total_revenue  avg_cac  pct_profitable
+North America       3054   121.60   133115968.01                 34.23   263.13           57.43
+       Europe       2345   111.66    98736632.80                 25.39   269.62           55.65
+ Asia Pacific       1993    94.05    73399152.05                 18.88   257.74           52.94
+Latin America       1099    81.68    38175951.18                  9.82   261.16           49.04
+  Middle East        783    71.19    25359090.97                  6.52   278.52           47.25
+       Africa        721    51.75    20076141.83                  5.16   276.96           43.27

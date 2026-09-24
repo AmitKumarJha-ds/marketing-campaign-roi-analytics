@@ -1,0 +1,18 @@
+-- 02_data_cleaning.sql
+-- FIX 1 : median imputation for numeric columns.
+-- MySQL source:
+-- SELECT campaign_id,
+--        COUNT(*)                AS occurrences,
+--        COUNT(DISTINCT campaign_name) AS distinct_names,
+--        MIN(start_date)         AS earliest_start,
+--        MAX(start_date)         AS latest_start
+-- FROM marketing_campaigns
+-- GROUP BY campaign_id
+-- HAVING COUNT(*) > 1
+-- ORDER BY occurrences DESC;
+
+-- Result: 0 row(s)
+
+Empty DataFrame
+Columns: [campaign_id, occurrences, distinct_names, earliest_start, latest_start]
+Index: []

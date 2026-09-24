@@ -1,0 +1,17 @@
+-- 02_data_cleaning.sql
+-- FIX 4 : rebuild the end date using the median valid duration.
+-- MySQL source:
+-- SELECT
+--     SUM(CASE WHEN budget_allocated < 0 THEN 1 ELSE 0 END) AS neg_budget,
+--     SUM(CASE WHEN amount_spent     < 0 THEN 1 ELSE 0 END) AS neg_spend,
+--     SUM(CASE WHEN impressions      < 0 THEN 1 ELSE 0 END) AS neg_impressions,
+--     SUM(CASE WHEN clicks           < 0 THEN 1 ELSE 0 END) AS neg_clicks,
+--     SUM(CASE WHEN leads_generated  < 0 THEN 1 ELSE 0 END) AS neg_leads,
+--     SUM(CASE WHEN conversions      < 0 THEN 1 ELSE 0 END) AS neg_conversions,
+--     SUM(CASE WHEN revenue_generated < 0 THEN 1 ELSE 0 END) AS neg_revenue
+-- FROM marketing_campaigns;
+
+-- Result: 1 row(s)
+
+ neg_budget  neg_spend  neg_impressions  neg_clicks  neg_leads  neg_conversions  neg_revenue
+          0          0                0           0          0                0            0

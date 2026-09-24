@@ -1,0 +1,23 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- SELECT
+--     campaign_type,
+--     COUNT(*)                                                       AS campaigns,
+--     ROUND(AVG(budget_allocated), 2)                                AS avg_budget,
+--     ROUND(AVG(amount_spent), 2)                                    AS avg_spend,
+--     ROUND(AVG(budget_utilization), 2)                              AS avg_budget_utilization_pct,
+--     ROUND(SUM(amount_spent) / NULLIF(SUM(budget_allocated), 0) * 100, 2) AS portfolio_utilization_pct,
+--     ROUND(AVG(roi_percentage), 2)                                  AS avg_roi
+-- FROM marketing_campaigns
+-- GROUP BY campaign_type
+-- ORDER BY avg_budget_utilization_pct DESC;
+
+-- Result: 5 row(s)
+
+  campaign_type  campaigns  avg_budget  avg_spend  avg_budget_utilization_pct  portfolio_utilization_pct  avg_roi
+  Re-engagement       1779    23981.03   19595.13                       81.93                      81.71    44.09
+      Retention       1762    24935.73   20325.98                       81.86                      81.51   203.86
+     Conversion       2140    24424.18   20122.29                       81.64                      82.39   156.50
+Brand Awareness       2019    24680.24   19744.90                       81.33                      80.00   -50.79
+Lead Generation       2295    24072.97   19507.00                       81.21                      81.03   145.30

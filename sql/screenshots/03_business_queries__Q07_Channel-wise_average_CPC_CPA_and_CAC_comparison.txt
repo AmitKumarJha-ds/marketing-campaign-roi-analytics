@@ -1,0 +1,29 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- SELECT
+--     channel,
+--     ROUND(AVG(cpc), 3)                                     AS avg_cpc,
+--     ROUND(AVG(cpa), 2)                                    AS avg_cpa,
+--     ROUND(AVG(customer_acquisition_cost), 2)              AS avg_cac,
+--     ROUND(AVG(ctr), 4)                                    AS avg_ctr,
+--     ROUND(AVG(conversion_rate), 4)                        AS avg_conversion_rate,
+--     ROUND(AVG(customer_acquisition_cost) - AVG(cpa), 2)   AS cac_overhead,
+--     RANK() OVER (ORDER BY AVG(customer_acquisition_cost))  AS cac_rank
+-- FROM marketing_campaigns
+-- GROUP BY channel
+-- ORDER BY avg_cac ASC;
+
+-- Result: 10 row(s)
+
+          channel  avg_cpc  avg_cpa  avg_cac  avg_ctr  avg_conversion_rate  cac_overhead  cac_rank
+            Email    0.896   115.21   144.02   2.9554               1.3780         28.80         1
+        Affiliate    0.942   129.16   161.45   2.2962               1.2810         32.29         2
+              SEO    1.113   158.41   198.01   3.5504               1.2762         39.60         3
+Content Marketing    1.624   199.97   249.97   1.8957               1.4521         49.99         4
+          YouTube    0.637   228.29   285.37   0.5735               0.5006         57.07         5
+     Facebook Ads    1.431   229.97   287.46   1.5961               1.1207         57.49         6
+       Google Ads    2.475   241.52   301.90   4.1087               1.7610         60.38         7
+       Influencer    1.119   247.86   309.82   0.8437               0.7922         61.96         8
+     Social Media    1.219   268.18   335.23   1.2679               0.7978         67.05         9
+    Instagram Ads    1.311   324.73   405.92   1.0837               0.7307         81.18        10

@@ -1,0 +1,15 @@
+-- 02_data_cleaning.sql
+-- FIX 3 : remove exact duplicates, keeping the lowest campaign_id
+-- MySQL source:
+-- SELECT campaign_id, campaign_name, start_date, end_date,
+--        DATEDIFF(end_date, start_date) AS duration_days
+-- FROM marketing_campaigns
+-- WHERE end_date < start_date
+--    OR start_date IS NULL
+--    OR end_date IS NULL;
+
+-- Result: 0 row(s)
+
+Empty DataFrame
+Columns: [campaign_id, campaign_name, start_date, end_date, duration_days]
+Index: []
