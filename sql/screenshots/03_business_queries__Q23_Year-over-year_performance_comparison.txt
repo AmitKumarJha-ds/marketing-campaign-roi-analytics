@@ -1,0 +1,24 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- WITH yearly AS (
+--     SELECT
+--         year,
+--         COUNT(*)                                       AS campaigns,
+--         ROUND(SUM(revenue_generated), 2)               AS revenue,
+--         ROUND(SUM(amount_spent), 2)                    AS spend,
+--         ROUND(AVG(roi_percentage), 2)                  AS avg_roi,
+--         ROUND(AVG(customer_acquisition_cost), 2)       AS avg_cac,
+--         ROUND(AVG(ctr), 4)                             AS avg_ctr
+--     FROM marketing_campaigns
+--     GROUP BY year
+-- )
+-- SELECT
+--     year,
+
+-- Result: 3 row(s)
+
+ year  campaigns      revenue       spend  avg_roi  avg_cac  avg_ctr  revenue_yoy_pct  cac_yoy_pct  roi_yoy_change
+ 2022       3517 136233052.28 68519117.63    98.64   261.35   2.0372              NaN          NaN             NaN
+ 2023       3397 127347858.09 66286902.89    96.61   265.53   2.0638            -6.52         1.60           -2.03
+ 2024       3081 125282026.47 63563321.53   106.58   270.42   2.0497            -1.62         1.84            9.97

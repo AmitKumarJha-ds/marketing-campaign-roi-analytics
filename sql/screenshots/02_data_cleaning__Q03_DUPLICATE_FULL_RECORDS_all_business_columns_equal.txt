@@ -1,0 +1,16 @@
+-- 02_data_cleaning.sql
+-- FIX 2 : keep the most complete record per campaign_id
+-- MySQL source:
+-- SELECT campaign_name, campaign_type, channel, start_date, end_date,
+--        budget_allocated, amount_spent, revenue_generated,
+--        COUNT(*) AS duplicate_rows
+-- FROM marketing_campaigns
+-- GROUP BY campaign_name, campaign_type, channel, start_date, end_date,
+--          budget_allocated, amount_spent, revenue_generated
+-- HAVING COUNT(*) > 1;
+
+-- Result: 0 row(s)
+
+Empty DataFrame
+Columns: [campaign_name, campaign_type, channel, start_date, end_date, budget_allocated, amount_spent, revenue_generated, duplicate_rows]
+Index: []

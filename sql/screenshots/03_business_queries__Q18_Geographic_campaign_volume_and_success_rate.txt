@@ -1,0 +1,25 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- SELECT
+--     geography,
+--     COUNT(*)                                                       AS campaigns,
+--     ROUND(COUNT(*) / (SELECT COUNT(*) FROM marketing_campaigns) * 100, 2) AS pct_of_campaigns,
+--     SUM(CASE WHEN is_profitable THEN 1 ELSE 0 END)                 AS profitable_campaigns,
+--     SUM(CASE WHEN NOT is_profitable THEN 1 ELSE 0 END)             AS loss_making_campaigns,
+--     ROUND(AVG(CASE WHEN is_profitable THEN 1 ELSE 0 END) * 100, 2) AS success_rate_pct,
+--     ROUND(AVG(budget_allocated), 2)                                AS avg_budget,
+--     ROUND(SUM(profit), 2)                                          AS total_profit
+-- FROM marketing_campaigns
+-- GROUP BY geography
+-- ORDER BY campaigns DESC;
+
+-- Result: 6 row(s)
+
+    geography  campaigns  pct_of_campaigns  profitable_campaigns  loss_making_campaigns  success_rate_pct  avg_budget  total_profit
+North America       3054             30.56                  1754                   1300             57.43    24474.97   72668306.00
+       Europe       2345             23.46                  1305                   1040             55.65    24378.82   51969475.42
+ Asia Pacific       1993             19.94                  1055                    938             52.94    24190.12   33945776.72
+Latin America       1099             11.00                   539                    560             49.04    24702.13   16211522.30
+  Middle East        783              7.83                   370                    413             47.25    24105.57    9979481.63
+       Africa        721              7.21                   312                    409             43.27    24681.77    5719033.10

@@ -1,0 +1,39 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- WITH geo_channel AS (
+--     SELECT
+--         geography,
+--         channel,
+--         COUNT(*)                                       AS campaigns,
+--         ROUND(AVG(roi_percentage), 2)                  AS avg_roi,
+--         ROUND(SUM(revenue_generated), 2)               AS revenue,
+--         RANK() OVER (PARTITION BY geography ORDER BY AVG(roi_percentage) DESC) AS rank_in_geo
+--     FROM marketing_campaigns
+--     GROUP BY geography, channel
+-- )
+-- SELECT geography, channel, campaigns, avg_roi, revenue, rank_in_geo
+-- FROM geo_channel
+-- WHERE rank_in_geo <= 3
+
+-- Result: 18 row(s)
+
+    geography           channel  campaigns  avg_roi     revenue  rank_in_geo
+       Africa               SEO         77   140.63  2990905.29            1
+       Africa             Email         82   126.12  2916513.97            2
+       Africa        Google Ads         82    85.65  3117883.02            3
+ Asia Pacific               SEO        199   187.51  9708449.44            1
+ Asia Pacific             Email        223   184.75 11650006.73            2
+ Asia Pacific         Affiliate        212   182.88 11454800.17            3
+       Europe         Affiliate        245   230.92 16340621.30            1
+       Europe             Email        279   215.53 17556950.75            2
+       Europe               SEO        253   211.26 15037779.70            3
+Latin America             Email        119   178.65  8195223.73            1
+Latin America               SEO        120   148.46  5260836.95            2
+Latin America Content Marketing        105   145.86  3073965.41            3
+  Middle East               SEO         94   148.74  4362983.62            1
+  Middle East         Affiliate         63   143.48  2304822.92            2
+  Middle East             Email         92   142.34  4818378.16            3
+North America               SEO        280   223.92 18324737.75            1
+North America         Affiliate        316   199.58 16588370.99            2
+North America             Email        360   190.44 20844230.40            3

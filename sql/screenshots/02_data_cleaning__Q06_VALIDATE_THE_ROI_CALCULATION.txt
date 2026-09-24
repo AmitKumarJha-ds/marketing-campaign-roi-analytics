@@ -1,0 +1,20 @@
+-- 02_data_cleaning.sql
+-- FIX 5 : neutralise negatives to NULL, then impute (see FIX 1)
+-- MySQL source:
+-- SELECT campaign_id,
+--        amount_spent,
+--        revenue_generated,
+--        roi_percentage                                          AS stored_roi,
+--        ROUND((revenue_generated - amount_spent) / amount_spent * 100, 2) AS recalculated_roi,
+--        ROUND(roi_percentage -
+--              (revenue_generated - amount_spent) / amount_spent * 100, 2) AS difference
+-- FROM marketing_campaigns
+-- WHERE amount_spent > 0
+--   AND ABS(roi_percentage - (revenue_generated - amount_spent) / amount_spent * 100) > 0.5
+-- ORDER BY ABS(difference) DESC;
+
+-- Result: 0 row(s)
+
+Empty DataFrame
+Columns: [campaign_id, amount_spent, revenue_generated, stored_roi, recalculated_roi, difference]
+Index: []

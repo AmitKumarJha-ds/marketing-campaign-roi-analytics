@@ -1,0 +1,36 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- WITH efficiency AS (
+--     SELECT
+--         channel,
+--         campaign_type,
+--         COUNT(*)                                                     AS campaigns,
+--         ROUND(AVG(cost_efficiency_ratio), 3)                         AS revenue_per_dollar,
+--         ROUND(AVG(roi_percentage), 2)                                AS avg_roi,
+--         ROUND(AVG(customer_acquisition_cost), 2)                     AS avg_cac,
+--         ROUND(SUM(profit), 2)                                        AS total_profit
+--     FROM marketing_campaigns
+--     GROUP BY channel, campaign_type
+--     HAVING COUNT(*) >= 30
+-- )
+-- SELECT *,
+
+-- Result: 15 row(s)
+
+          channel   campaign_type  campaigns  revenue_per_dollar  avg_roi  avg_cac  total_profit  efficiency_rank
+              SEO       Retention        192               4.353   335.34    98.28   11230986.40                1
+        Affiliate       Retention        184               4.184   318.44    77.23    9896344.73                2
+            Email       Retention        192               4.011   301.10    76.55   11820916.11                3
+        Affiliate      Conversion        205               3.977   297.75    92.34   11616114.82                4
+            Email Lead Generation        292               3.797   279.71    77.40   15491931.99                5
+Content Marketing       Retention        160               3.789   278.88   121.02    6028051.23                6
+              SEO Lead Generation        213               3.742   274.21   103.00   10849773.71                7
+              SEO      Conversion        224               3.735   273.51   104.72   11338672.45                8
+            Email      Conversion        236               3.619   261.84    82.58   11878705.91                9
+        Affiliate Lead Generation        227               3.280   227.96    85.72    8143465.73               10
+       Google Ads       Retention        187               2.962   196.24   159.28    7486522.56               11
+     Facebook Ads       Retention        161               2.685   168.50   134.53    6440450.50               12
+       Influencer      Conversion        181               2.581   158.09   166.31    4234863.37               13
+Content Marketing      Conversion        217               2.564   156.35   141.06    5794290.42               14
+Content Marketing Lead Generation        190               2.559   155.91   139.06    5143597.25               15

@@ -1,0 +1,26 @@
+-- 02_data_cleaning.sql
+-- QUERY 11 : DATA QUALITY SUMMARY REPORT
+-- MySQL source:
+-- SELECT 'Completeness' AS quality_dimension,
+--        ROUND((1 - (
+--            (COUNT(*) - COUNT(campaign_id)) + (COUNT(*) - COUNT(channel)) +
+--            (COUNT(*) - COUNT(revenue_generated)) + (COUNT(*) - COUNT(amount_spent))
+--        ) / (COUNT(*) * 4.0)) * 100, 2) AS score_pct,
+--        CASE WHEN (COUNT(*) - COUNT(campaign_id)) + (COUNT(*) - COUNT(channel)) +
+--                  (COUNT(*) - COUNT(revenue_generated)) + (COUNT(*) - COUNT(amount_spent)) = 0
+--             THEN 'PASS' ELSE 'FAIL' END AS status
+-- FROM marketing_campaigns
+-- UNION ALL
+-- SELECT 'Uniqueness',
+--        ROUND((1 - (COUNT(*) - COUNT(DISTINCT campaign_id)) / COUNT(*)) * 100, 2),
+--        CASE WHEN COUNT(*) = COUNT(DISTINCT campaign_id) THEN 'PASS' ELSE 'FAIL' END
+-- FROM marketing_campaigns
+
+-- Result: 5 row(s)
+
+quality_dimension  score_pct status
+     Completeness      100.0   PASS
+       Uniqueness      100.0   PASS
+         Validity      100.0   PASS
+      Consistency      100.0   PASS
+       Timeliness      100.0   PASS

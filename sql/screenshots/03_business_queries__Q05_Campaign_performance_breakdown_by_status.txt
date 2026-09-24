@@ -1,0 +1,23 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- SELECT
+--     campaign_status,
+--     COUNT(*)                                              AS campaigns,
+--     ROUND(AVG(roi_percentage), 2)                         AS avg_roi,
+--     ROUND(AVG(revenue_generated), 2)                      AS avg_revenue,
+--     ROUND(AVG(budget_utilization), 2)                     AS avg_budget_utilization,
+--     ROUND(AVG(campaign_duration_days), 1)                 AS avg_duration_days,
+--     ROUND(AVG(CASE WHEN is_profitable THEN 1 ELSE 0 END) * 100, 2) AS pct_profitable,
+--     ROUND(SUM(profit), 2)                                 AS total_profit
+-- FROM marketing_campaigns
+-- GROUP BY campaign_status
+-- ORDER BY avg_roi DESC;
+
+-- Result: 4 row(s)
+
+campaign_status  campaigns  avg_roi  avg_revenue  avg_budget_utilization  avg_duration_days  pct_profitable  total_profit
+         Active       1669   132.30     43698.75                   80.61               71.6           57.94   39199975.73
+      Completed       7045   113.87     43096.19                   89.57               71.5           57.84  151610983.13
+         Paused        582    24.08     18110.18                   57.72               72.8           35.22    1608770.06
+      Cancelled        699   -48.08      2542.12                   23.04               70.3           12.59   -1926133.75

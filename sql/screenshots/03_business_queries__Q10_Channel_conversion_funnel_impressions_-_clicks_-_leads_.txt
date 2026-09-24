@@ -1,0 +1,30 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- SELECT
+--     channel,
+--     SUM(impressions)                                                AS total_impressions,
+--     SUM(clicks)                                                     AS total_clicks,
+--     SUM(leads_generated)                                            AS total_leads,
+--     SUM(conversions)                                                AS total_conversions,
+--     ROUND(SUM(clicks)        / NULLIF(SUM(impressions), 0) * 100, 3) AS ctr_pct,
+--     ROUND(SUM(leads_generated) / NULLIF(SUM(clicks), 0) * 100, 3)   AS click_to_lead_pct,
+--     ROUND(SUM(conversions)   / NULLIF(SUM(leads_generated), 0) * 100, 3) AS lead_to_conversion_pct,
+--     ROUND(SUM(conversions)   / NULLIF(SUM(impressions), 0) * 100, 4) AS impression_to_conversion_pct
+-- FROM marketing_campaigns
+-- GROUP BY channel
+-- ORDER BY lead_to_conversion_pct DESC;
+
+-- Result: 10 row(s)
+
+          channel  total_impressions  total_clicks  total_leads  total_conversions  ctr_pct  click_to_lead_pct  lead_to_conversion_pct  impression_to_conversion_pct
+            Email         1250881779      29340188      1288007             372290    2.346              4.390                  28.904                        0.0298
+       Google Ads          244831232       8739634       564220             159322    3.570              6.456                  28.238                        0.0651
+              SEO          585190930      18358069       806393             224743    3.137              4.393                  27.870                        0.0384
+        Affiliate         1144700523      22439433       968652             267699    1.960              4.317                  27.636                        0.0234
+Content Marketing          683389275      11145132       580317             150662    1.631              5.207                  25.962                        0.0220
+     Facebook Ads         1030267319      14367128       653894             159497    1.395              4.551                  24.392                        0.0155
+     Social Media         1480245838      15978595       566358             126491    1.079              3.544                  22.334                        0.0085
+       Influencer         2207236356      16646532       582329             128063    0.754              3.498                  21.992                        0.0058
+    Instagram Ads         1749429169      16021613       561459             116122    0.916              3.504                  20.682                        0.0066
+          YouTube         5903175216      30543673       863833             157965    0.517              2.828                  18.287                        0.0027

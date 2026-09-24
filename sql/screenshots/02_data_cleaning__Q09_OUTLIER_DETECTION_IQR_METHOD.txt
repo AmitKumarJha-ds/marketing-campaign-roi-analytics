@@ -1,0 +1,24 @@
+-- 02_data_cleaning.sql
+-- FIX 8 : trim and re-case every dimension
+-- MySQL source:
+-- WITH ranked AS (
+--     SELECT revenue_generated, amount_spent, impressions,
+--            ROW_NUMBER() OVER (ORDER BY revenue_generated) AS rn_rev,
+--            ROW_NUMBER() OVER (ORDER BY amount_spent)     AS rn_spend,
+--            ROW_NUMBER() OVER (ORDER BY impressions)      AS rn_imp,
+--            COUNT(*) OVER ()                              AS n
+--     FROM marketing_campaigns
+-- ),
+-- quartiles AS (
+--     SELECT
+--         MAX(CASE WHEN rn_rev  = FLOOR(n * 0.25) + 1 THEN revenue_generated END) AS rev_q1,
+--         MAX(CASE WHEN rn_rev  = FLOOR(n * 0.75) + 1 THEN revenue_generated END) AS rev_q3,
+--         MAX(CASE WHEN rn_spend = FLOOR(n * 0.25) + 1 THEN amount_spent END)     AS spend_q1,
+--         MAX(CASE WHEN rn_spend = FLOOR(n * 0.75) + 1 THEN amount_spent END)     AS spend_q3,
+
+-- Result: 3 row(s)
+
+           metric        q1         q3        iqr  upper_fence  outliers_above
+revenue_generated   4002.08   37570.02   33567.94     87921.93            1136
+     amount_spent   5413.23   24185.93   18772.70     52344.98             826
+      impressions 231115.00 1593360.00 1362245.00   3636727.50            1140

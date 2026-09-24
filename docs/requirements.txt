@@ -1,0 +1,76 @@
+# ================================================================
+# CampaignPulse - Marketing Campaign ROI Analytics
+# Requirements & Setup Instructions
+# ================================================================
+
+# ================================================================
+# PYTHON REQUIREMENTS
+# ================================================================
+# Python Version: 3.9+
+
+pandas==2.1.4
+numpy==1.26.2
+matplotlib==3.8.2
+seaborn==0.13.0
+jupyter==1.0.0
+notebook==7.0.6
+openpyxl==3.1.2
+scipy==1.11.4
+
+# ================================================================
+# HOW TO RUN THIS PROJECT LOCALLY
+# ================================================================
+
+# Step 1: Clone the repository
+# git clone https://github.com/AmitKumarJha-ds/marketing-campaign-roi-analytics.git
+# cd marketing-campaign-roi-analytics
+
+# Step 2: Create virtual environment
+# python -m venv venv
+# source venv/bin/activate  (Linux/Mac)
+# venv\Scripts\activate  (Windows)
+
+# Step 3: Install dependencies
+# pip install -r docs/requirements.txt
+
+# Step 4: Run Jupyter Notebooks
+# jupyter notebook
+# Open notebooks/01_CampaignPulse_Data_Cleaning.ipynb
+# Run all cells   -> produces data/marketing_campaign_cleaned.csv
+# Then open notebooks/02_CampaignPulse_Analysis.ipynb
+# Run all cells   -> produces the 12 charts in charts/
+
+# Step 5: SQL Setup
+# Install MySQL 8.0+ (or MariaDB 10.6+)
+# mysql -u root -p < sql/01_database_setup.sql
+# Import data/marketing_campaign_cleaned.csv into marketing_campaigns
+#   (uncomment the LOAD DATA INFILE block and adjust the path,
+#    or use the MySQL Workbench Table Data Import Wizard)
+# mysql -u root -p campaign_pulse_db < sql/02_data_cleaning.sql
+# mysql -u root -p campaign_pulse_db < sql/03_business_queries.sql
+
+# Step 6: Tableau Dashboard
+# Install Tableau Desktop / Tableau Public 2024.1+
+# Open tableau/CampaignPulse_Marketing_ROI_Dashboard.twbx
+# Follow tableau/TABLEAU_DASHBOARD_BUILD_GUIDE.md
+
+# Step 7: View Reports
+# Open reports/reports/CampaignPulse_Marketing_Campaign_ROI_Report.pdf
+# Open reports/presentations/CampaignPulse_Marketing_Campaign_ROI_Presentation.pptx
+
+# ================================================================
+# TOOLS & VERSIONS USED
+# ================================================================
+# Python: 3.11
+# Jupyter Notebook: 7.0
+# MySQL: 8.0 / PostgreSQL: 15+
+# Tableau: 2024.1+
+# Microsoft PowerPoint: Office 365
+# Microsoft Word: Office 365
+
+# ================================================================
+# OPTIONAL (development / validation helpers)
+# ================================================================
+# sqlglot==30.19.0        # SQL dialect transpilation used to validate
+#                         # every statement in the sql/ folder
+# nbconvert==7.16.4       # headless notebook execution

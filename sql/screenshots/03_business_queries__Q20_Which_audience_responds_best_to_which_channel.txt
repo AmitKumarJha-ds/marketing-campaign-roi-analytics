@@ -1,0 +1,39 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- WITH audience_channel AS (
+--     SELECT
+--         target_audience,
+--         channel,
+--         COUNT(*)                                       AS campaigns,
+--         ROUND(AVG(roi_percentage), 2)                  AS avg_roi,
+--         RANK() OVER (PARTITION BY target_audience
+--                      ORDER BY AVG(roi_percentage) DESC) AS rank_in_audience
+--     FROM marketing_campaigns
+--     GROUP BY target_audience, channel
+-- )
+-- SELECT target_audience, channel, campaigns, avg_roi, rank_in_audience
+-- FROM audience_channel
+-- WHERE rank_in_audience <= 3
+
+-- Result: 18 row(s)
+
+    target_audience           channel  campaigns  avg_roi  rank_in_audience
+      Mid-Age 35-50               SEO        225   311.02                 1
+      Mid-Age 35-50         Affiliate        200   266.61                 2
+      Mid-Age 35-50             Email        242   248.37                 3
+            Parents             Email        168   220.06                 1
+            Parents               SEO        143   184.00                 2
+            Parents         Affiliate        136   174.17                 3
+Professionals 25-35               SEO        233   265.07                 1
+Professionals 25-35             Email        267   262.65                 2
+Professionals 25-35         Affiliate        253   258.72                 3
+         Senior 50+         Affiliate        104   174.32                 1
+         Senior 50+               SEO        105   162.05                 2
+         Senior 50+             Email        108   151.44                 3
+           Students             Email        176    77.85                 1
+           Students         Affiliate        134    61.19                 2
+           Students Content Marketing        142    32.34                 3
+ Young Adults 18-25               SEO        179   103.09                 1
+ Young Adults 18-25         Affiliate        186   102.41                 2
+ Young Adults 18-25             Email        194    89.31                 3

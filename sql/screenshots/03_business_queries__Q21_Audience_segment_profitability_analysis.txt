@@ -1,0 +1,25 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- SELECT
+--     target_audience,
+--     COUNT(*)                                                       AS campaigns,
+--     ROUND(SUM(profit), 2)                                          AS total_profit,
+--     ROUND(AVG(profit), 2)                                          AS avg_profit_per_campaign,
+--     ROUND(AVG(profit_margin), 2)                                   AS avg_profit_margin_pct,
+--     ROUND(AVG(CASE WHEN is_profitable THEN 1 ELSE 0 END) * 100, 2) AS pct_profitable,
+--     ROUND(AVG(CASE WHEN is_profitable THEN profit ELSE 0 END), 2)  AS avg_profit_when_profitable,
+--     ROUND(AVG(CASE WHEN NOT is_profitable THEN profit ELSE 0 END), 2) AS avg_loss_when_unprofitable
+-- FROM marketing_campaigns
+-- GROUP BY target_audience
+-- ORDER BY total_profit DESC;
+
+-- Result: 6 row(s)
+
+    target_audience  campaigns  total_profit  avg_profit_per_campaign  avg_profit_margin_pct  pct_profitable  avg_profit_when_profitable  avg_loss_when_unprofitable
+Professionals 25-35       2426   67964185.62                 28014.92                 -63.69           60.88                    31461.78                    -3446.86
+      Mid-Age 35-50       1984   63048076.71                 31778.26                 -40.85           67.39                    34544.98                    -2766.72
+            Parents       1397   29439520.55                 21073.39                 -98.32           58.20                    24984.67                    -3911.29
+ Young Adults 18-25       1761   14194119.93                  8060.26                -176.93           42.31                    13696.31                    -5636.04
+         Senior 50+       1007   12761199.61                 12672.49                -109.49           50.15                    17633.07                    -4960.58
+           Students       1420    3086492.75                  2173.59                -301.28           32.25                     9554.42                    -7380.83

@@ -1,0 +1,23 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- SELECT
+--     budget_tier,
+--     COUNT(*)                                                       AS campaigns,
+--     ROUND(AVG(budget_allocated), 2)                                AS avg_budget,
+--     ROUND(AVG(roi_percentage), 2)                                  AS avg_roi,
+--     ROUND(AVG(revenue_generated), 2)                               AS avg_revenue,
+--     ROUND(SUM(revenue_generated), 2)                               AS total_revenue,
+--     ROUND(AVG(CASE WHEN is_profitable THEN 1 ELSE 0 END) * 100, 2) AS pct_profitable,
+--     RANK() OVER (ORDER BY AVG(roi_percentage) DESC)                AS roi_rank
+-- FROM marketing_campaigns
+-- GROUP BY budget_tier
+-- ORDER BY avg_roi DESC;
+
+-- Result: 4 row(s)
+
+      budget_tier  campaigns  avg_budget  avg_roi  avg_revenue  total_revenue  pct_profitable  roi_rank
+      Micro (<5K)       1475     3178.07   115.94      5733.39     8456751.01           55.66         1
+   Small (5K-25K)       5469    12949.85   104.22     22505.17   123080754.97           52.97         2
+Medium (25K-100K)       2719    45313.88    88.37     71334.01   193957162.80           52.04         3
+Large (100K-250K)        332   136219.28    66.83    190868.28    63368268.06           60.84         4

@@ -1,0 +1,21 @@
+-- 03_business_queries.sql
+-- CATEGORY 6 : TIME-BASED ANALYSIS
+-- MySQL source:
+-- SELECT
+--     campaign_quarter,
+--     COUNT(*)                                                       AS campaigns,
+--     ROUND(AVG(roi_percentage), 2)                                  AS avg_roi,
+--     ROUND(SUM(revenue_generated), 2)                               AS total_revenue,
+--     ROUND(AVG(revenue_generated), 2)                               AS avg_revenue,
+--     ROUND(AVG(CASE WHEN is_profitable THEN 1 ELSE 0 END) * 100, 2) AS pct_profitable
+-- FROM marketing_campaigns
+-- GROUP BY campaign_quarter
+-- ORDER BY campaign_quarter;
+
+-- Result: 4 row(s)
+
+ campaign_quarter  campaigns  avg_roi  total_revenue  avg_revenue  pct_profitable
+                1       2524    94.65    93800476.54     37163.42           51.82
+                2       2608   106.33   103316231.09     39615.12           52.91
+                3       2531   103.72   101257673.80     40006.98           53.22
+                4       2332    96.37    90488555.41     38802.98           55.75

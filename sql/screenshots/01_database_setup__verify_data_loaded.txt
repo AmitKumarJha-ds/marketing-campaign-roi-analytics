@@ -1,0 +1,16 @@
+-- 01_database_setup.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- SELECT COUNT(*)                    AS total_records,
+--        COUNT(DISTINCT campaign_id) AS distinct_campaigns,
+--        MIN(start_date)             AS first_campaign,
+--        MAX(start_date)             AS last_campaign,
+--        SUM(budget_allocated)       AS total_budget,
+--        SUM(amount_spent)           AS total_spend,
+--        SUM(revenue_generated)      AS total_revenue
+-- FROM marketing_campaigns;
+
+-- Result: 1 row(s)
+
+ total_records  distinct_campaigns first_campaign last_campaign  total_budget  total_spend  total_revenue
+          9995                9995     2022-01-01    2024-11-28  2.439436e+08 198369342.04   3.888629e+08

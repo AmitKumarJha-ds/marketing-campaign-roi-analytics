@@ -1,0 +1,25 @@
+-- 03_business_queries.sql
+-- CATEGORY 5 : AUDIENCE ANALYSIS
+-- MySQL source:
+-- SELECT
+--     target_audience,
+--     COUNT(*)                                                       AS campaigns,
+--     ROUND(AVG(roi_percentage), 2)                                  AS avg_roi,
+--     ROUND(AVG(ctr), 4)                                             AS avg_ctr,
+--     ROUND(AVG(conversion_rate), 4)                                 AS avg_conversion_rate,
+--     ROUND(AVG(engagement_rate), 2)                                 AS avg_engagement_rate,
+--     ROUND(AVG(customer_acquisition_cost), 2)                       AS avg_cac,
+--     ROUND(AVG(revenue_generated), 2)                               AS avg_revenue
+-- FROM marketing_campaigns
+-- GROUP BY target_audience
+-- ORDER BY avg_roi DESC;
+
+-- Result: 6 row(s)
+
+    target_audience  campaigns  avg_roi  avg_ctr  avg_conversion_rate  avg_engagement_rate  avg_cac  avg_revenue
+      Mid-Age 35-50       1984   167.49   2.0895               1.3169                 8.24   217.59     51773.20
+Professionals 25-35       2426   152.45   2.0396               1.2503                 7.90   226.04     47871.01
+            Parents       1397   109.32   1.9869               1.2236                 8.04   229.89     40890.12
+         Senior 50+       1007    68.97   2.1189               0.9489                 8.17   306.52     32383.83
+ Young Adults 18-25       1761    38.93   2.0727               0.9532                 8.04   305.02     27594.22
+           Students       1420     7.45   1.9982               0.8149                 7.89   357.25     22311.55

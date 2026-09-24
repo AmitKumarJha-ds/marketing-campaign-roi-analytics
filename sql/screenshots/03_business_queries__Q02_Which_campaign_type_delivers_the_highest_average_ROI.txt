@@ -1,0 +1,24 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- SELECT
+--     campaign_type,
+--     COUNT(*)                                              AS campaigns,
+--     ROUND(AVG(roi_percentage), 2)                         AS avg_roi,
+--     ROUND(AVG(revenue_generated), 2)                      AS avg_revenue,
+--     ROUND(SUM(revenue_generated), 2)                      AS total_revenue,
+--     ROUND(SUM(profit), 2)                                 AS total_profit,
+--     ROUND(AVG(CASE WHEN is_profitable THEN 1 ELSE 0 END) * 100, 2) AS pct_profitable,
+--     RANK() OVER (ORDER BY AVG(roi_percentage) DESC)       AS roi_rank
+-- FROM marketing_campaigns
+-- GROUP BY campaign_type
+-- ORDER BY avg_roi DESC;
+
+-- Result: 5 row(s)
+
+  campaign_type  campaigns  avg_roi  avg_revenue  total_revenue  total_profit  pct_profitable  roi_rank
+      Retention       1762   203.86     57022.81   100474184.41   64659802.94           73.95         1
+     Conversion       2140   156.50     51009.84   109161056.62   66099361.36           70.09         2
+Lead Generation       2295   145.30     47593.81   109227793.22   64459219.19           67.28         3
+  Re-engagement       1779    44.09     27449.49    48832641.81   13972909.72           43.28         4
+Brand Awareness       2019   -50.79     10484.03    21167260.79  -18697698.04           10.80         5

@@ -1,0 +1,22 @@
+-- 02_data_cleaning.sql
+-- QUERY 1 : NULL VALUES IN CRITICAL COLUMNS
+-- MySQL source:
+-- SELECT
+--     SUM(CASE WHEN campaign_id              IS NULL THEN 1 ELSE 0 END) AS null_campaign_id,
+--     SUM(CASE WHEN campaign_name            IS NULL THEN 1 ELSE 0 END) AS null_campaign_name,
+--     SUM(CASE WHEN campaign_type            IS NULL THEN 1 ELSE 0 END) AS null_campaign_type,
+--     SUM(CASE WHEN channel                  IS NULL THEN 1 ELSE 0 END) AS null_channel,
+--     SUM(CASE WHEN target_audience          IS NULL THEN 1 ELSE 0 END) AS null_target_audience,
+--     SUM(CASE WHEN geography                IS NULL THEN 1 ELSE 0 END) AS null_geography,
+--     SUM(CASE WHEN start_date               IS NULL THEN 1 ELSE 0 END) AS null_start_date,
+--     SUM(CASE WHEN end_date                 IS NULL THEN 1 ELSE 0 END) AS null_end_date,
+--     SUM(CASE WHEN budget_allocated         IS NULL THEN 1 ELSE 0 END) AS null_budget_allocated,
+--     SUM(CASE WHEN amount_spent             IS NULL THEN 1 ELSE 0 END) AS null_amount_spent,
+--     SUM(CASE WHEN impressions              IS NULL THEN 1 ELSE 0 END) AS null_impressions,
+--     SUM(CASE WHEN clicks                   IS NULL THEN 1 ELSE 0 END) AS null_clicks,
+--     SUM(CASE WHEN leads_generated          IS NULL THEN 1 ELSE 0 END) AS null_leads_generated,
+
+-- Result: 1 row(s)
+
+ null_campaign_id  null_campaign_name  null_campaign_type  null_channel  null_target_audience  null_geography  null_start_date  null_end_date  null_budget_allocated  null_amount_spent  null_impressions  null_clicks  null_leads_generated  null_conversions  null_revenue_generated  null_roi_percentage  null_satisfaction_score  null_bounce_rate  null_engagement_rate
+                0                   0                   0             0                     0               0                0              0                      0                  0                 0            0                     0                 0                       0                    0                        0                 0                     0

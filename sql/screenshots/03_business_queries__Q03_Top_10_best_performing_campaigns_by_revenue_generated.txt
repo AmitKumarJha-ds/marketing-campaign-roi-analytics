@@ -1,0 +1,31 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- SELECT
+--     campaign_id,
+--     campaign_name,
+--     campaign_type,
+--     channel,
+--     geography,
+--     target_audience,
+--     ROUND(budget_allocated, 2)   AS budget_allocated,
+--     ROUND(revenue_generated, 2)  AS revenue_generated,
+--     ROUND(profit, 2)             AS profit,
+--     ROUND(roi_percentage, 2)     AS roi_percentage,
+--     ROUND(performance_score, 2)  AS performance_score
+-- FROM marketing_campaigns
+-- ORDER BY revenue_generated DESC
+
+-- Result: 10 row(s)
+
+campaign_id                                campaign_name   campaign_type           channel     geography     target_audience  budget_allocated  revenue_generated    profit  roi_percentage  performance_score
+  CAMP_5318           Premium Conversion Push - SEO 2024      Conversion               SEO Latin America Professionals 25-35          99434.52          468743.26 381092.18          434.78               9.54
+  CAMP_5266            Winter Conversion Push - SEO 2024      Conversion               SEO Latin America Professionals 25-35          45513.21          468743.26 426397.58         1006.94              14.49
+  CAMP_4413 Brand Refresh Conversion Push - YouTube 2024      Conversion           YouTube        Europe       Mid-Age 35-50          60166.65          468743.26 422649.83          916.94               7.05
+  CAMP_4770                 Autumn Lead Gen - Email 2023 Lead Generation             Email        Europe       Mid-Age 35-50          85714.59          468743.26 396925.27          552.68               8.88
+  CAMP_8844                 Holiday Retention - SEO 2023       Retention               SEO North America  Young Adults 18-25         163137.25          468743.26 330331.30          238.66               4.63
+  CAMP_9250        Flash Sale Retention - Affiliate 2024       Retention         Affiliate        Europe       Mid-Age 35-50         127904.31          468743.26 361339.75          336.43               6.91
+  CAMP_7783      Flash Sale Lead Gen - Facebook Ads 2024 Lead Generation      Facebook Ads Latin America Professionals 25-35          55721.19          468743.26 428805.41         1073.68              12.00
+  CAMP_7502    Monsoon Lead Gen - Content Marketing 2024 Lead Generation Content Marketing        Europe            Students          23352.20          468743.26 453480.93         2971.24              16.17
+  CAMP_9044              Referral Retention - Email 2022       Retention             Email North America Professionals 25-35          32095.98          468743.26 442374.51         1677.65              11.39
+  CAMP_5112 Newsletter Lead Gen - Content Marketing 2022 Lead Generation Content Marketing        Europe          Senior 50+         163137.25          468743.26 330331.30          238.66               6.31

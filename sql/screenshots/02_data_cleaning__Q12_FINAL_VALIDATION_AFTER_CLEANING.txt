@@ -1,0 +1,22 @@
+-- 02_data_cleaning.sql
+-- QUERY 12 : FINAL VALIDATION AFTER CLEANING
+-- MySQL source:
+-- SELECT
+--     (SELECT COUNT(*) FROM marketing_campaigns)                                  AS total_rows,
+--     (SELECT COUNT(*) FROM (SELECT campaign_id FROM marketing_campaigns
+--                            GROUP BY campaign_id HAVING COUNT(*) > 1) d)         AS duplicate_ids,
+--     (SELECT COUNT(*) FROM marketing_campaigns WHERE campaign_id IS NULL)        AS null_ids,
+--     (SELECT COUNT(*) FROM marketing_campaigns WHERE revenue_generated IS NULL)  AS null_revenue,
+--     (SELECT COUNT(*) FROM marketing_campaigns WHERE end_date < start_date)      AS bad_dates,
+--     (SELECT COUNT(*) FROM marketing_campaigns WHERE amount_spent < 0)           AS negative_spend,
+--     (SELECT COUNT(*) FROM marketing_campaigns WHERE conversions > leads_generated) AS funnel_errors,
+--     (SELECT COUNT(*) FROM marketing_campaigns
+--       WHERE ABS(roi_percentage -
+--                 (revenue_generated - amount_spent) / amount_spent * 100) > 0.5) AS roi_mismatches,
+--     CASE WHEN (SELECT COUNT(*) FROM marketing_campaigns) > 0
+--           AND (SELECT COUNT(*) FROM marketing_campaigns WHERE campaign_id IS NULL) = 0
+
+-- Result: 1 row(s)
+
+ total_rows  duplicate_ids  null_ids  null_revenue  bad_dates  negative_spend  funnel_errors  roi_mismatches                release_status
+       9995              0         0             0          0               0              0               0 CLEAN - RELEASE TO DASHBOARDS

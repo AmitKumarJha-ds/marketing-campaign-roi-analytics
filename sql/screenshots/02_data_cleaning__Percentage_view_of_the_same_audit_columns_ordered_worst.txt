@@ -1,0 +1,21 @@
+-- 02_data_cleaning.sql
+-- Percentage view of the same audit (columns ordered worst-first)
+-- MySQL source:
+-- SELECT 'campaign_name' AS column_name,
+--        COUNT(*) - COUNT(campaign_name) AS missing_rows,
+--        ROUND((COUNT(*) - COUNT(campaign_name)) / COUNT(*) * 100, 2) AS missing_pct
+-- FROM marketing_campaigns
+-- UNION ALL
+-- SELECT 'channel', COUNT(*) - COUNT(channel),
+--        ROUND((COUNT(*) - COUNT(channel)) / COUNT(*) * 100, 2) FROM marketing_campaigns
+-- UNION ALL
+-- SELECT 'revenue_generated', COUNT(*) - COUNT(revenue_generated),
+--        ROUND((COUNT(*) - COUNT(revenue_generated)) / COUNT(*) * 100, 2) FROM marketing_campaigns
+-- ORDER BY missing_pct DESC;
+
+-- Result: 3 row(s)
+
+      column_name  missing_rows  missing_pct
+    campaign_name             0          0.0
+          channel             0          0.0
+revenue_generated             0          0.0

@@ -1,0 +1,22 @@
+-- 03_business_queries.sql
+-- CATEGORY 1 : CAMPAIGN PERFORMANCE ANALYSIS
+-- MySQL source:
+-- WITH ranked AS (
+--     SELECT roi_percentage,
+--            ROW_NUMBER() OVER (ORDER BY roi_percentage) AS rn,
+--            COUNT(*)     OVER ()                        AS n
+--     FROM marketing_campaigns
+-- )
+-- SELECT
+--     (SELECT COUNT(*) FROM marketing_campaigns)                          AS total_campaigns,
+--     ROUND(AVG(roi_percentage), 2)                                       AS avg_roi,
+--     ROUND(
+--         (SUM(revenue_generated) / SUM(amount_spent) - 1) * 100, 2)      AS blended_roi,
+--     ROUND((SELECT roi_percentage FROM ranked
+--            WHERE rn = FLOOR(n / 2) + 1), 2)                             AS median_roi,
+--     ROUND(MIN(roi_percentage), 2)                                       AS worst_roi,
+
+-- Result: 1 row(s)
+
+ total_campaigns  avg_roi  blended_roi  median_roi  worst_roi  best_roi  roi_volatility  total_revenue  total_spend  total_profit
+            9995    100.4        96.03       11.51     -99.25  10365.48          316.75   388862936.84 198369342.04  190493595.17

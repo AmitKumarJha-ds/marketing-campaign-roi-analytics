@@ -1,0 +1,26 @@
+-- 03_business_queries.sql
+-- ----------------------------------------------------------------
+-- MySQL source:
+-- WITH duration_band AS (
+--     SELECT
+--         CASE
+--             WHEN campaign_duration_days <= 30  THEN '1. Short (0-30 days)'
+--             WHEN campaign_duration_days <= 60  THEN '2. Medium (31-60 days)'
+--             WHEN campaign_duration_days <= 90  THEN '3. Long (61-90 days)'
+--             WHEN campaign_duration_days <= 120 THEN '4. Extended (91-120 days)'
+--             ELSE '5. Marathon (120+ days)'
+--         END                                            AS duration_band,
+--         campaign_duration_days,
+--         roi_percentage,
+--         revenue_generated,
+--         is_profitable
+--     FROM marketing_campaigns
+
+-- Result: 5 row(s)
+
+            duration_band  campaigns  avg_duration_days  avg_roi  avg_revenue  pct_profitable
+     1. Short (0-30 days)       3677               18.0    99.40     39036.51           53.28
+   2. Medium (31-60 days)       1774               52.6   103.61     40100.88           53.95
+     3. Long (61-90 days)       1870               82.4   101.14     40666.74           54.33
+4. Extended (91-120 days)        882              120.0    94.55     39016.18           51.25
+  5. Marathon (120+ days)       1792              164.7   101.36     35562.32           53.07

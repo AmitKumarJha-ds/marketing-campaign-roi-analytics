@@ -1,0 +1,16 @@
+-- 02_data_cleaning.sql
+-- Detail: values that differ from the reference vocabulary
+-- MySQL source:
+-- SELECT channel, COUNT(*) AS rows_affected
+-- FROM marketing_campaigns
+-- WHERE TRIM(channel) <> channel
+--    OR channel NOT IN ('Email','Social Media','Google Ads','Facebook Ads',
+--                       'Instagram Ads','YouTube','SEO','Content Marketing',
+--                       'Influencer','Affiliate')
+-- GROUP BY channel;
+
+-- Result: 0 row(s)
+
+Empty DataFrame
+Columns: [channel, rows_affected]
+Index: []

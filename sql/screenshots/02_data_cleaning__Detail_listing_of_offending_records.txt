@@ -1,0 +1,15 @@
+-- 02_data_cleaning.sql
+-- Detail listing of offending records
+-- MySQL source:
+-- SELECT campaign_id, budget_allocated, amount_spent, impressions,
+--        clicks, leads_generated, conversions, revenue_generated
+-- FROM marketing_campaigns
+-- WHERE budget_allocated < 0 OR amount_spent < 0 OR impressions < 0
+--    OR clicks < 0 OR leads_generated < 0 OR conversions < 0
+--    OR revenue_generated < 0;
+
+-- Result: 0 row(s)
+
+Empty DataFrame
+Columns: [campaign_id, budget_allocated, amount_spent, impressions, clicks, leads_generated, conversions, revenue_generated]
+Index: []
